@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<head>
+    <title>TypeScript Compiler</title>
+    <link rel="stylesheet" href="index.css"></link>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            hljs.highlightAll();
+        })
+        function copyFunction(buttonID, functionID){
+            var copyText = document.getElementById(functionID)
+            navigator.clipboard.writeText(copyText.innerText);
+            var buttonElement=document.getElementById(buttonID);
+            buttonElement.innerHTML= '<i class="bi bi-check2"></i> Copied';
+        } 
+    </script>
+    <script  src="./source-javascript/1.helloWorld.js"></script>
+    <script src="./source-javascript/2.WelcomeTypeScript.js"></script>
+    <script src="./source-javascript/3.DisplayName.js"></script>
+    <script src="./source-javascript/5.functions.js"></script>
+    <script src="./source-javascript/6.arrays.js"></script>
+    <script src="./source-javascript/7.tuples.js"></script>
+    <script src="./source-javascript/8.enums.js"></script>
+    <script src="./source-javascript/9.functionDetailed.js"></script>
+    <script src="./source-javascript/10.objects.js"></script>
+    <script src="./source-javascript/11.typeAlias.js"></script>
+    <script src="./source-javascript/12.unionTypes.js"></script>
+    <script src="./source-javascript/13.intersection.js"></script>
+    <script src="./source-javascript/14.literalTypes.js"></script>
+    <script src="./source-javascript/15.Nullable.js"></script>
+    <script src="source-javascript/16.optionalChaining.js"></script>
+</head>
+<body>
+    <h1>Welcome to TypeScript Compiler</h1>
+    <div>
+        <h3>Introduction:</h3>
+        <p>TypeScript is a javascript compiler in which codes are strongly typed.</p>
+        <p>Advantages of TypeScript</p>
+        <ul>
+            <li>TypeScript Codes are strongly typed.</li>
+            <li>It is easy to debug, found error while typing code itself in IDE.</li>
+            <li>It is preferable for large scale applications.</li>
+        </ul>
+    </div>
+    <hr>
+    <h3>TypeScript Codes:</h3>
+    <div class="code-parent">
+        <h4>1.Hello World Program</h4>
+        <button class="copy-icon" id="helloWorldCopyText" onclick="copyFunction('helloWorldCopyText','helloWorldCopyFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="helloWorldCopyFunction" class="language-javascript">
+console.log('1.Hello World');                                     
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>2.Welcome typeScript Program</h4>
+        <button class="copy-icon" id="welcomeTypeScriptCopyText" onclick="copyFunction('welcomeTypeScriptCopyText','welcomeTypeScriptFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="welcomeTypeScriptFunction" class="language-javascript">
+let language="TypeScript Compiler";
+console.log(`2.Welcome to ${language}`)                                    
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>3.Display Name Program</h4>
+        <button class="copy-icon" id="DisplayNameCopyText" onclick="copyFunction('DisplayNameCopyText','DisplayNameFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="DisplayNameFunction" class="language-javascript">
+let names:string="Ponniah";
+let age:number=5;
+console.log(`3.Initialing Types`);
+console.log(`Names: ${names}`);
+console.log(`Ages : ${age}`);                                  
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>4.Data Types Program</h4>
+        <button class="copy-icon" id="DataTypeCopyText" onclick="copyFunction('DataTypeCopyText','DataTypeFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="DataTypeFunction"class="language-javascript">
+let string ="Ponniah";
+let age1 =5;
+let married = true;
+
+let role; //any type but it won't prefer
+role=1;
+role ="name";
+role=false;                                                  
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>5.TypeScript Functions</h4>
+        <button class="copy-icon" id="typeScriptFunctionCopyText" onclick="copyFunction('typeScriptFunctionCopyText','typescriptFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="typescriptFunction"class="language-javascript">
+console.log(`5.Functions Basics`);
+function newFunction(parameters :any){
+    console.log(`Parameters: ${parameters}`)
+}
+newFunction('TypeScript Parameters');
+newFunction(25);                                                 
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>6.Array Program</h4>
+        <button class="copy-icon" id="typeScriptArrayCopyText" onclick="copyFunction('typeScriptArrayCopyText','typescriptArrayFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="typescriptArrayFunction"class="language-javascript">
+console.log('6.Arrays');
+let numArray :number[]=[1,2,3,4,5];
+let stringArray :string[] = ['Hi','hello','Welcome'];
+// numArray.forEach(value=>console.log(value.toString()));
+// stringArray.forEach(value=>console.log(value.includes('Hi')));
+console.log('Number Array: ',numArray);
+console.log(`String Array ${stringArray}`);                                                
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>7.Tuples Program</h4>
+        <button class="copy-icon" id="typeScriptTuplesCopyText" onclick="copyFunction('typeScriptTuplesCopyText','typescriptTuplesFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="typescriptTuplesFunction"class="language-javascript">
+console.log('7.Tuples');
+console.log('Tuples is an array concept where we can create different type of elements in single array');
+console.log('Maximum 2 type of elements are preferable');
+let array:[number,string]=[1,'Ponniah'];
+console.log('Final Array: ',array);                              
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>8.Enums Program</h4>
+        <button class="copy-icon" id="typeScriptEnumCopyText" onclick="copyFunction('typeScriptEnumCopyText','typescriptEnumFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="typescriptEnumFunction"class="language-javascript">
+console.log('8.Enums');
+console.log('Enums contains list of constants along with values');
+enum TShirtSize {Small=36, Medium=38, Large=40};
+let small=TShirtSize.Small;
+let medium = TShirtSize.Medium;
+let large = TShirtSize.Large;
+console.log(`Small Size: ${small}, Medium Size: ${medium}, Large Size: ${large}`);
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>9.Functions Details Program</h4>
+        <button class="copy-icon" id="typeScriptFunctionDetailsCopyText" onclick="copyFunction('typeScriptFunctionDetailsCopyText','typescriptFunctionDetailsFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="typescriptFunctionDetailsFunction"class="language-javascript">
+console.log('9.Functions');
+console.log('Using TypeScript in functions we can overcome below issues in compiler');
+console.log('Identify Unused Parameters, Unused Locals, Implicit returns');
+//General Functions
+function Calculation(value1:number, value2:number):number{
+    if(value1>value2)
+        return value1 -value2
+    return value1+value2
+}
+Calculation(5,3)
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>10.Objects Program</h4>
+        <button class="copy-icon" id="typeScriptObjectsCopyText" onclick="copyFunction('typeScriptObjectsCopyText','typescriptObjectsFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="typescriptObjectsFunction"class="language-javascript">
+console.log('10.Objects');
+console.log('Similar to JavaScript Objects we can initiate typescript objects');
+console.log('But we have to define properties type before you initiate object');
+let employee : {readonly id:number,names:string, Role:string, workingStatus?:boolean}={id:1,names:'Ponniah', Role:'Associate Architect III'};
+employee.workingStatus=true;
+console.log(`Employee Id: ${employee.id}, Employee Name: ${employee.names}`);
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>11.Type Alias Program</h4>
+        <button class="copy-icon" id="typeScriptTypeAliasCopyText" onclick="copyFunction('typeScriptTypeAliasCopyText','typescriptTypeAliasFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="typescriptTypeAliasFunction"class="language-javascript">
+console.log('11.type Alias');
+console.log('type Alias is a concept where we declare our won custom objects and reused wherever we want');
+console.log('we have to use type keyword along with custom object name');
+
+type Employee={
+    readonly id:number,
+    name: string,
+    Role: string,
+    workingStatus?:boolean
+}
+
+const Employee1:Employee={
+    id:1,
+    name:'Ponniah',
+    Role:'Associate Architect III',
+    workingStatus:true
+};
+
+const Employee2:Employee={
+    id:2,
+    name:'Ponniah',
+    Role:'Technical Architect III',
+    workingStatus:true
+}
+
+console.log(`Employee Details 1 Employee Id: ${Employee1.id}, Employee Name: ${Employee1.name}, Employee Role:${Employee1.Role} `);
+console.log(`Employee Details 2 Employee Id: ${Employee2.id}, Employee Name: ${Employee2.name}, Employee Role:${Employee2.Role} `);
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>12.Union Types Program</h4>
+        <button class="copy-icon" id="typeScriptUnionTypesCopyText" onclick="copyFunction('typeScriptUnionTypesCopyText','typescriptUnionTypesFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="typescriptUnionTypesFunction"class="language-javascript">
+console.log('12.Union Types');
+console.log('Union Types allows users to assign variables or function parameters with multiple types');
+console.log('eg: let EmployeeId: string | number');
+let employeeId:string | number;
+employeeId=1;
+console.log(`Number EmployeeId: ${employeeId}`);
+employeeId='1';
+console.log(`String EmployeeId: ${employeeId}`);
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>13.Intersection Program</h4>
+        <button class="copy-icon" id="typeScriptIntersectionCopyText" onclick="copyFunction('typeScriptIntersectionCopyText','typescriptIntersectionFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="typescriptIntersectionFunction"class="language-javascript">
+console.log('13.Intersection');
+console.log('Intersection makes possible single variable can assign multiple data types at same time');
+console.log('Eg: let variableName: string & Number');
+
+type variableA={
+    value1:string
+}
+
+type variableB={
+    value2:Number
+}
+
+type intersectionVariable= variableA & variableB;
+
+let intersectionVariables:intersectionVariable={
+    value1:'1',
+    value2:1,
+}
+
+console.log('Intersection Values: ', intersectionVariables);
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>14.Literal Types Program</h4>
+        <button class="copy-icon" id="typeScriptLiteralTypesCopyText" onclick="copyFunction('typeScriptLiteralTypesCopyText','typescriptLiteralTypesFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="typescriptLiteralTypesFunction"class="language-javascript">
+console.log('Literal types means literally we are assigning values');
+console.log('Eg: Instead of declaring types we are declaring values');
+
+type literalNumber=50 |100;
+
+type literalString="String1" | 'String2';
+
+let strings:literalString="String1";
+
+let numbers:literalNumber=50;
+
+console.log(`LiteralString: ${strings}`);
+console.log(`LiteralNumbers: ${numbers}`);
+                
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>15.Nullable Program</h4>
+        <button class="copy-icon" id="typeScriptNullableCopyText" onclick="copyFunction('typeScriptNullableCopyText','typescriptNullableFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="typescriptNullableFunction"class="language-javascript">
+console.log('Nullable');
+console.log('Typescript allows you to send or assign null data');
+function nullData(name:string | null | undefined){
+    console.log(`Name:${name}`);
+}
+nullData('Ponniah');
+nullData(null);
+nullData(undefined);
+                
+            </code>
+        </pre>
+    </div>
+    <div class="code-parent">
+        <h4>16.Optional Chaining Program</h4>
+        <button class="copy-icon" id="typeScriptOptionalChainingCopyText" onclick="copyFunction('typeScriptOptionalChainingCopyText','typescriptOptionalChainingFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+        <pre style="tab-size: 2;">
+            <code id="typescriptOptionalChainingFunction"class="language-javascript">
+console.log('16.Optional Chaining');
+console.log('Optional Chaining helps us to overcome whether elements or function either having null or undefined or overcome problems');
+console.log('Using ? operator we can overcome this issue');
+let data:any;
+let dataLength:number = data?.length
+console.log(`Data length: ${dataLength}`);
+let array1:[]=[];
+let arrayLength=array1?.length;
+console.log(`Array Length: ${arrayLength}`);
+            </code>
+        </pre>
+    </div>
+</div>
+</body>

@@ -1,0 +1,11 @@
+.code-parent{
+    position: relative;
+    width: 50%;
+}
+.copy-icon{
+    position: absolute;
+    top: 58px;
+    right: 0px;
+    border: 1px solid white;
+    background-color: white;
+}
