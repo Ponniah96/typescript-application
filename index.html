@@ -43,6 +43,35 @@
             <li>It is easy to debug, found error while typing code itself in IDE.</li>
             <li>It is preferable for large scale applications.</li>
         </ul>
+        <h3>Commands to run typeScript compilers</h3>
+        <div class="code-parent">
+            <h4>1.Installation</h4>
+            <button class="copy-icon" id="typescriptInstallationCopyText" onclick="copyFunction('typescriptInstallationCopyText','typeScriptInstallationFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+            <pre style="tab-size: 2;">
+                <code id="typeScriptInstallationFunction" class="language-javascript">
+    npm i -g typescript                                    
+                </code>
+            </pre>
+        </div>
+        <div class="code-parent">
+            <h4>2.In ts.config.json, change below path</h4>
+            <button class="copy-icon" id="typescriptConfigCopyText" onclick="copyFunction('typescriptConfigCopyText','typeScriptConfigFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+            <pre style="tab-size: 2;">
+                <code id="typeScriptConfigFunction" class="language-javascript">
+"rootDir": "./source-typescript",
+"outDir": "./source-javascript"                                   
+                </code>
+            </pre>
+        </div>
+        <div class="code-parent">
+            <h4>3.Run command to convert JavaScript file</h4>
+            <button class="copy-icon" id="typescriptCompilationCopyText" onclick="copyFunction('typescriptCompilationCopyText','typeScriptCompilationFunction')"><i class="bi bi-clipboard"></i>Copy</button>
+            <pre style="tab-size: 2;">
+                <code id="typeScriptCompilationFunction" class="language-javascript">
+tsc.cmd                                 
+                </code>
+            </pre>
+        </div>
     </div>
     <hr>
     <h3>TypeScript Codes:</h3>
